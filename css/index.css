@@ -1,0 +1,164 @@
+/* ========================================
+   INDEX.HTML - PAGINA DE INICIO
+   ======================================== */
+
+@import url('base.css');
+
+/* Hero */
+section[aria-label="Bienvenida"] {
+    background-color: #F2994A;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+section[aria-label="Bienvenida"] h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+section[aria-label="Bienvenida"] p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: #FFF8F0;
+}
+
+section[aria-label="Bienvenida"] a {
+    display: inline-block;
+    background-color: white;
+    color: #F2994A;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 0 10px;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+section[aria-label="Bienvenida"] a:hover {
+    background-color: #986F3F;
+    color: white;
+    text-decoration: none;
+}
+
+/* Categorías */
+section[aria-label="Categorias de productos"] ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+section[aria-label="Categorias de productos"] li {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+section[aria-label="Categorias de productos"] li:hover {
+    transform: translateY(-5px);
+}
+
+section[aria-label="Categorias de productos"] img {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+section[aria-label="Categorias de productos"] h3 {
+    color: #986F3F;
+    margin-bottom: 8px;
+}
+
+section[aria-label="Categorias de productos"] a {
+    color: #2D9CDB;
+    font-weight: 600;
+}
+
+/* Banner de turnos */
+section[aria-label="Reserva de turnos"] {
+    background-color: #6FCF97;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 30px 0;
+}
+
+section[aria-label="Reserva de turnos"] h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+section[aria-label="Reserva de turnos"] p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+section[aria-label="Reserva de turnos"] a {
+    display: inline-block;
+    background-color: white;
+    color: #6FCF97;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+section[aria-label="Reserva de turnos"] a:hover {
+    background-color: #986F3F;
+    color: white;
+    text-decoration: none;
+}
+
+/* Productos destacados */
+section[aria-label="Productos destacados"] ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+section[aria-label="Productos destacados"] li {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+section[aria-label="Productos destacados"] h3 {
+    color: #986F3F;
+    margin: 10px 0;
+}
+
+section[aria-label="Productos destacados"] p {
+    color: #F2994A;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Servicios */
+section[aria-label="Servicios que ofrecemos"] ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+section[aria-label="Servicios que ofrecemos"] li {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+section[aria-label="Servicios que ofrecemos"] h3 {
+    color: #F2994A;
+    margin: 10px 0;
+}

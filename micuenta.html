@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - Huellas & Cia</title>
+    <link rel="stylesheet" href="./css/micuenta.css">
+    <script src="./js/funciones.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="./" aria-label="Ir al inicio de Huellas y Cia">
+            <img src="./recursos/imagenes/logo.png" alt="Logo Huellas y Cia">
+        </a>
+        <nav aria-label="Navegacion principal">
+            <ul>
+                <li><a href="./">Inicio</a></li>
+                <li><a href="./tienda.html">Tienda</a></li>
+                <li><a href="./turnos.html">Turnos</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./micuenta.html">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Mi Cuenta</h1>
+
+        <!-- Tabs de navegacion -->
+        <nav aria-label="Opciones de cuenta">
+            <ul>
+                <li><a href="#login" onclick="mostrarLogin(); return false;">Iniciar sesion</a></li>
+                <li><a href="#registro" onclick="mostrarRegistro(); return false;">Registrarse</a></li>
+            </ul>
+        </nav>
+
+        <!-- Login -->
+        <section id="login" aria-label="Iniciar sesion">
+            <h2>Iniciar sesion</h2>
+            <form id="form-login" action="./micuenta.html" method="post">
+                <label for="email_login">Email</label>
+                <input type="email" id="email_login" name="email" required>
+
+                <label for="password">Contrasena</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Ingresar</button>
+            </form>
+            <a href="#">Olvide mi contrasena</a>
+        </section>
+
+        <!-- Registro -->
+        <section id="registro" aria-label="Registrarse" style="display:none;">
+            <h2>Crear cuenta</h2>
+            <form id="form-registro" action="./micuenta.html" method="post">
+                <label for="nombre_reg">Nombre completo</label>
+                <input type="text" id="nombre_reg" name="nombre" required>
+
+                <label for="email_reg">Email</label>
+                <input type="email" id="email_reg" name="email" required>
+
+                <label for="telefono_reg">Telefono</label>
+                <input type="tel" id="telefono_reg" name="telefono">
+
+                <label for="password_reg">Contrasena</label>
+                <input type="password" id="password_reg" name="password" required>
+
+                <label for="password_confirm">Confirmar contrasena</label>
+                <input type="password" id="password_confirm" name="password_confirm" required>
+
+                <label for="mascota">Nombre de tu mascota</label>
+                <input type="text" id="mascota" name="mascota">
+
+                <button type="submit">Registrarme</button>
+            </form>
+        </section>
+
+        <!-- Panel de usuario (oculto hasta loguearse) -->
+        <section aria-label="Panel de usuario" style="display:none;">
+            <h2>Bienvenido, Juan</h2>
+            <button type="button" onclick="cerrarSesion()" style="margin-bottom: 20px;">Cerrar sesion</button>
+
+            <article aria-label="Historial de compras">
+                <h3>Mis compras</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Producto</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10/04/2025</td>
+                            <td>Alimento Perro Adulto</td>
+                            <td>$ 15.000</td>
+                            <td>Entregado</td>
+                        </tr>
+                        <tr>
+                            <td>25/03/2025</td>
+                            <td>Shampoo Suave</td>
+                            <td>$ 4.200</td>
+                            <td>Entregado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article aria-label="Historial de turnos">
+                <h3>Mis turnos</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Servicio</th>
+                            <th>Mascota</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15/05/2025</td>
+                            <td>Bano completo</td>
+                            <td>Luna</td>
+                            <td>Confirmado</td>
+                        </tr>
+                        <tr>
+                            <td>01/04/2025</td>
+                            <td>Corte de pelo</td>
+                            <td>Luna</td>
+                            <td>Completado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h4>Huellas & Cia</h4>
+            <p>Cordoba, Argentina</p>
+            <p>Tel: +54 351 000-0000</p>
+            <p>contacto@huellas.com.ar</p>
+        </div>
+        <div>
+            <h4>Redes sociales</h4>
+            <a href="https://instagram.com/huellascia" aria-label="Link a Instagram">
+                <img src="./recursos/iconos/ig.svg" width="35" alt="Icono Instagram">
+            </a>
+            <a href="https://facebook.com/huellascia" aria-label="Link a Facebook">
+                <img src="./recursos/iconos/fb.svg" width="35" alt="Icono Facebook">
+            </a>
+            <a href="https://wa.me/543510000000" aria-label="Link a WhatsApp">
+                <img src="./recursos/iconos/wa.svg" width="35" alt="Icono WhatsApp">
+            </a>
+        </div>
+        <div>
+            <p>2025 Huellas & Cia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

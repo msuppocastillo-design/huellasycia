@@ -1,0 +1,96 @@
+/* ========================================
+   TURNOS.HTML - RESERVA DE TURNOS
+   ======================================== */
+
+@import url('base.css');
+
+/* Stepper */
+nav[aria-label="Pasos de reserva"] {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav[aria-label="Pasos de reserva"] ol {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav[aria-label="Pasos de reserva"] li {
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #666;
+}
+
+nav[aria-label="Pasos de reserva"] li[aria-current="step"] {
+    background-color: #F2994A;
+    color: white;
+}
+
+/* Fieldsets del formulario */
+form fieldset {
+    background-color: white;
+    margin-bottom: 25px;
+}
+
+form fieldset ul {
+    margin-top: 10px;
+}
+
+form fieldset li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form fieldset input[type="radio"] {
+    width: auto;
+    margin-bottom: 0;
+}
+
+form fieldset label {
+    display: inline;
+    font-weight: 400;
+    color: #333;
+}
+
+/* Resumen de cita */
+aside[aria-label="Resumen de tu cita"] {
+    background-color: #6FCF97;
+    border: none;
+    color: white;
+}
+
+aside[aria-label="Resumen de tu cita"] h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+aside[aria-label="Resumen de tu cita"] p {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+aside[aria-label="Resumen de tu cita"] span {
+    font-weight: 700;
+}
+
+/* Boton confirmar */
+form button[type="submit"] {
+    background-color: #F2994A;
+    font-size: 1.1rem;
+    padding: 15px 40px;
+    display: block;
+    margin: 20px auto;
+}
+
+form button[type="submit"]:hover {
+    background-color: #986F3F;
+}

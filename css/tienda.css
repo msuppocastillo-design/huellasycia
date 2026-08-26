@@ -1,0 +1,151 @@
+/* ========================================
+   TIENDA.HTML - CATALOGO DE PRODUCTOS
+   ======================================== */
+
+@import url('base.css');
+
+/* Buscador */
+section[aria-label="Buscar productos"] {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+section[aria-label="Buscar productos"] form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section[aria-label="Buscar productos"] input {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 0;
+}
+
+/* Filtros aside */
+aside[aria-label="Filtros de productos"] {
+    background-color: white;
+    border: 2px solid #F2994A;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+aside[aria-label="Filtros de productos"] h2 {
+    color: #F2994A;
+    margin-bottom: 15px;
+}
+
+aside[aria-label="Filtros de productos"] h3 {
+    color: #986F3F;
+    margin: 15px 0 10px;
+    font-size: 1rem;
+}
+
+aside[aria-label="Filtros de productos"] li {
+    margin-bottom: 8px;
+}
+
+aside[aria-label="Filtros de productos"] input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+aside[aria-label="Filtros de productos"] label {
+    display: inline;
+    font-weight: 400;
+    color: #333;
+}
+
+/* Banner mas vendido */
+section[aria-label="Producto mas vendido"] {
+    background-color: #2D9CDB;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+section[aria-label="Producto mas vendido"] h2 {
+    color: white;
+}
+
+section[aria-label="Producto mas vendido"] a {
+    display: inline-block;
+    background-color: white;
+    color: #2D9CDB;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+section[aria-label="Producto mas vendido"] a:hover {
+    background-color: #F2994A;
+    color: white;
+    text-decoration: none;
+}
+
+/* Catalogo de productos */
+section[aria-label="Catalogo de productos"] ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+section[aria-label="Catalogo de productos"] li {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+section[aria-label="Catalogo de productos"] li:hover {
+    transform: translateY(-5px);
+}
+
+section[aria-label="Catalogo de productos"] h3 {
+    color: #986F3F;
+    margin: 10px 0;
+}
+
+section[aria-label="Catalogo de productos"] p {
+    color: #F2994A;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+section[aria-label="Catalogo de productos"] a {
+    color: #2D9CDB;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* Carrito en header */
+header div[aria-label="Carrito de compras"] {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+header div[aria-label="Carrito de compras"] span {
+    background-color: #2D9CDB;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+}

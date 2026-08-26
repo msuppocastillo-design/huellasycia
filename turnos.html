@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Turno - Huellas & Cia</title>
+    <link rel="stylesheet" href="./css/turnos.css">
+    <script src="./js/funciones.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="./" aria-label="Ir al inicio de Huellas y Cia">
+            <img src="./recursos/imagenes/logo.png" alt="Logo Huellas y Cia">
+        </a>
+        <nav aria-label="Navegacion principal">
+            <ul>
+                <li><a href="./">Inicio</a></li>
+                <li><a href="./tienda.html">Tienda</a></li>
+                <li><a href="./turnos.html">Turnos</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./micuenta.html">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Reservar turno</h1>
+
+        <!-- Stepper -->
+        <nav aria-label="Pasos de reserva">
+            <ol>
+                <li aria-current="step">1. Servicio</li>
+                <li>2. Fecha y hora</li>
+                <li>3. Datos</li>
+                <li>4. Confirmacion</li>
+            </ol>
+        </nav>
+
+        <form id="form-turnos" action="./confirmacion_turno.html" method="post">
+            <!-- Paso 1: Seleccion de servicio -->
+            <fieldset>
+                <legend>Selecciona el servicio</legend>
+                <ul>
+                    <li>
+                        <input type="radio" id="serv_bano" name="servicio" value="bano" required>
+                        <label for="serv_bano">Bano completo - $ 3.500</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="serv_corte" name="servicio" value="corte" required>
+                        <label for="serv_corte">Corte de pelo - $ 4.500</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="serv_banocorte" name="servicio" value="banocorte" required>
+                        <label for="serv_banocorte">Bano + Corte - $ 7.000</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="serv_unas" name="servicio" value="unas" required>
+                        <label for="serv_unas">Corte de unas - $ 1.500</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <!-- Paso 2: Fecha y hora -->
+            <fieldset>
+                <legend>Selecciona fecha y hora</legend>
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="hora">Horario</label>
+                <select id="hora" name="hora" required>
+                    <option value="">Seleccionar hora</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                </select>
+            </fieldset>
+
+            <!-- Paso 3: Datos de la mascota -->
+            <fieldset>
+                <legend>Datos de tu mascota</legend>
+                <label for="nombre_mascota">Nombre de la mascota</label>
+                <input type="text" id="nombre_mascota" name="nombre_mascota" required>
+
+                <label for="tipo_mascota">Tipo de mascota</label>
+                <select id="tipo_mascota" name="tipo_mascota" required>
+                    <option value="">Seleccionar</option>
+                    <option value="perro">Perro</option>
+                    <option value="gato">Gato</option>
+                </select>
+
+                <label for="raza">Raza</label>
+                <input type="text" id="raza" name="raza" placeholder="Ej: Labrador">
+
+                <label for="peso">Peso aproximado (kg)</label>
+                <input type="number" id="peso" name="peso" min="1" max="80">
+
+                <label for="notas">Notas adicionales</label>
+                <textarea id="notas" name="notas" rows="3" placeholder="Alergias, comportamiento, etc."></textarea>
+            </fieldset>
+
+            <!-- Paso 4: Datos del dueno -->
+            <fieldset>
+                <legend>Tus datos</legend>
+                <label for="nombre_dueno">Nombre completo</label>
+                <input type="text" id="nombre_dueno" name="nombre_dueno" required>
+
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </fieldset>
+
+            <!-- Resumen de cita -->
+            <aside aria-label="Resumen de tu cita">
+                <h2>Resumen</h2>
+                <p>Servicio: <span>No seleccionado</span></p>
+                <p>Fecha: <span>--/--/----</span></p>
+                <p>Hora: <span>--:--</span></p>
+                <p>Total: <span>$ 0</span></p>
+            </aside>
+
+            <button type="submit">Confirmar turno</button>
+        </form>
+    </main>
+
+    <footer>
+        <div>
+            <h4>Huellas & Cia</h4>
+            <p>Cordoba, Argentina</p>
+            <p>Tel: +54 351 000-0000</p>
+            <p>contacto@huellas.com.ar</p>
+        </div>
+        <div>
+            <h4>Redes sociales</h4>
+            <a href="https://instagram.com/huellascia" aria-label="Link a Instagram">
+                <img src="./recursos/iconos/ig.svg" width="35" alt="Icono Instagram">
+            </a>
+            <a href="https://facebook.com/huellascia" aria-label="Link a Facebook">
+                <img src="./recursos/iconos/fb.svg" width="35" alt="Icono Facebook">
+            </a>
+            <a href="https://wa.me/543510000000" aria-label="Link a WhatsApp">
+                <img src="./recursos/iconos/wa.svg" width="35" alt="Icono WhatsApp">
+            </a>
+        </div>
+        <div>
+            <p>2025 Huellas & Cia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

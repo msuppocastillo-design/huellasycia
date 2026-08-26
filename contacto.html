@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Huellas & Cia</title>
+    <link rel="stylesheet" href="./css/contacto.css">
+    <script src="./js/funciones.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="./" aria-label="Ir al inicio de Huellas y Cia">
+            <img src="./recursos/imagenes/logo.png" alt="Logo Huellas y Cia">
+        </a>
+        <nav aria-label="Navegacion principal">
+            <ul>
+                <li><a href="./">Inicio</a></li>
+                <li><a href="./tienda.html">Tienda</a></li>
+                <li><a href="./turnos.html">Turnos</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./micuenta.html">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contacto</h1>
+
+        <section aria-label="Informacion de contacto">
+            <h2>Datos del local</h2>
+            <ul>
+                <li>
+                    <img src="./recursos/iconos/ubicacion.svg" width="30" alt="Icono ubicacion">
+                    <p>Av. Colon 1234, Cordoba, Argentina</p>
+                </li>
+                <li>
+                    <img src="./recursos/iconos/telefono.svg" width="30" alt="Icono telefono">
+                    <p>Tel: +54 351 000-0000</p>
+                </li>
+                <li>
+                    <img src="./recursos/iconos/email.svg" width="30" alt="Icono email">
+                    <p>contacto@huellas.com.ar</p>
+                </li>
+                <li>
+                    <img src="./recursos/iconos/horario.svg" width="30" alt="Icono horario">
+                    <p>Lunes a Sabado: 9:00 a 20:00</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Mapa de Google Maps embebido -->
+        <section aria-label="Ubicacion en el mapa">
+            <h2>Donde estamos</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.9999999999995!2d-64.1888!3d-31.4199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzExLjYiUyA2NMKwMTEnMTkuNyJX!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                title="Mapa de ubicacion de Huellas y Cia">
+            </iframe>
+        </section>
+
+        <!-- Formulario de contacto -->
+        <section aria-label="Formulario de contacto">
+            <h2>Escribinos</h2>
+            <form id="form-contacto" action="./contacto.html" method="post">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email_contacto">Email *</label>
+                <input type="email" id="email_contacto" name="email" required>
+
+                <label for="telefono_contacto">Telefono</label>
+                <input type="tel" id="telefono_contacto" name="telefono">
+
+                <label for="asunto">Asunto *</label>
+                <select id="asunto" name="asunto" required>
+                    <option value="">Seleccionar</option>
+                    <option value="consulta">Consulta general</option>
+                    <option value="producto">Consulta sobre producto</option>
+                    <option value="turno">Consulta sobre turno</option>
+                    <option value="reclamo">Reclamo</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aqui..."></textarea>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+
+        <!-- Links directos -->
+        <section aria-label="Contacto directo">
+            <h2>O contactanos por</h2>
+            <a href="https://wa.me/543510000000" aria-label="Enviar mensaje por WhatsApp">
+                <img src="./recursos/iconos/wa.svg" width="40" alt="Icono WhatsApp">
+                WhatsApp
+            </a>
+            <a href="mailto:contacto@huellas.com.ar" aria-label="Enviar email">
+                <img src="./recursos/iconos/email.svg" width="40" alt="Icono email">
+                Email
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h4>Huellas & Cia</h4>
+            <p>Cordoba, Argentina</p>
+            <p>Tel: +54 351 000-0000</p>
+            <p>contacto@huellas.com.ar</p>
+        </div>
+        <div>
+            <h4>Redes sociales</h4>
+            <a href="https://instagram.com/huellascia" aria-label="Link a Instagram">
+                <img src="./recursos/iconos/ig.svg" width="35" alt="Icono Instagram">
+            </a>
+            <a href="https://facebook.com/huellascia" aria-label="Link a Facebook">
+                <img src="./recursos/iconos/fb.svg" width="35" alt="Icono Facebook">
+            </a>
+            <a href="https://wa.me/543510000000" aria-label="Link a WhatsApp">
+                <img src="./recursos/iconos/wa.svg" width="35" alt="Icono WhatsApp">
+            </a>
+        </div>
+        <div>
+            <p>2025 Huellas & Cia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+/* ========================================
+   PRODUCTO.HTML - DETALLE DE PRODUCTO
+   ======================================== */
+
+@import url('base.css');
+
+/* Migas de pan */
+nav[aria-label="Migas de pan"] {
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+nav[aria-label="Migas de pan"] ul {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+nav[aria-label="Migas de pan"] li {
+    color: #666;
+}
+
+nav[aria-label="Migas de pan"] a {
+    color: #2D9CDB;
+}
+
+/* Detalle del producto */
+article[aria-label="Detalle del producto"] {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+article[aria-label="Detalle del producto"] img {
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+article[aria-label="Detalle del producto"] h1 {
+    color: #986F3F;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+article[aria-label="Detalle del producto"] > p:first-of-type {
+    color: #F2994A;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+article[aria-label="Detalle del producto"] ul {
+    background-color: #FFF8F0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+article[aria-label="Detalle del producto"] ul li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+article[aria-label="Detalle del producto"] label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+article[aria-label="Detalle del producto"] input[type="number"] {
+    width: 80px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Productos relacionados */
+section[aria-label="Productos relacionados"] h2 {
+    color: #F2994A;
+    margin-bottom: 15px;
+}
+
+section[aria-label="Productos relacionados"] ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+section[aria-label="Productos relacionados"] li {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+section[aria-label="Productos relacionados"] h3 {
+    color: #986F3F;
+    margin: 10px 0;
+}
+
+section[aria-label="Productos relacionados"] p {
+    color: #F2994A;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Carrito en header */
+header div[aria-label="Carrito de compras"] {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+header div[aria-label="Carrito de compras"] span {
+    background-color: #2D9CDB;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+}

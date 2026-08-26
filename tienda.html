@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Huellas & Cia</title>
+    <link rel="stylesheet" href="./css/tienda.css">
+    
+    <script src="./js/funciones.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="./" aria-label="Ir al inicio de Huellas y Cia">
+            <img src="./recursos/imagenes/logo.png" alt="Logo Huellas y Cia">
+        </a>
+        <nav aria-label="Navegacion principal">
+            <ul>
+                <li><a href="./">Inicio</a></li>
+                <li><a href="./tienda.html">Tienda</a></li>
+                <li><a href="./turnos.html">Turnos</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./micuenta.html">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+        <div aria-label="Carrito de compras">
+            <img src="./recursos/iconos/carrito.svg" width="30" alt="Icono carrito">
+            <span>0</span>
+        </div>
+    </header>
+
+    <main>
+        <h1>Tienda Huellas & Cia</h1>
+
+        <!-- Barra de busqueda -->
+        <section aria-label="Buscar productos">
+            <form action="./tienda.html" method="get" onsubmit="return false;">
+                <label for="buscar">Buscar productos</label>
+                <input type="text" id="buscar" name="buscar" placeholder="Ej: alimento para perros">
+                <button type="button" onclick="aplicarFiltros()">Buscar</button>
+            </form>
+        </section>
+
+        <!-- Filtros -->
+        <aside aria-label="Filtros de productos">
+            <h2>Filtrar por</h2>
+            <section>
+                <h3>Categorias</h3>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="cat_alimentos" name="categoria" value="alimentos">
+                        <label for="cat_alimentos">Alimentos</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cat_accesorios" name="categoria" value="accesorios">
+                        <label for="cat_accesorios">Accesorios</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cat_higiene" name="categoria" value="higiene">
+                        <label for="cat_higiene">Higiene</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cat_salud" name="categoria" value="salud">
+                        <label for="cat_salud">Salud</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cat_juguetes" name="categoria" value="juguetes">
+                        <label for="cat_juguetes">Juguetes</label>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Precio</h3>
+                <label for="precio_min">Minimo</label>
+                <input type="number" id="precio_min" name="precio_min" placeholder="0">
+                <label for="precio_max">Maximo</label>
+                <input type="number" id="precio_max" name="precio_max" placeholder="50000">
+            </section>
+            <section>
+                <h3>Marcas</h3>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="marca_royal" name="marca" value="royalcanin">
+                        <label for="marca_royal">Royal Canin</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="marca_proplan" name="marca" value="proplan">
+                        <label for="marca_proplan">Pro Plan</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="marca_whiskas" name="marca" value="whiskas">
+                        <label for="marca_whiskas">Whiskas</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="marca_petcare" name="marca" value="petcare">
+                        <label for="marca_petcare">PetCare</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="marca_vetplus" name="marca" value="vetplus">
+                        <label for="marca_vetplus">VetPlus</label>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Banner mas vendido -->
+        <section aria-label="Producto mas vendido">
+            <img src="./recursos/imagenes/ALIMENTO PERRO.jpg" alt="Producto mas vendido del mes" width="300">
+            <h2>Mas vendido del mes</h2>
+            <p>Alimento Royal Canin Adulto - 15kg</p>
+            <a href="./producto.html?id=1">Ver producto</a>
+        </section>
+
+        <!-- Catalogo de productos -->
+        <section aria-label="Catalogo de productos">
+            <h2>Productos</h2>
+            <ul id="catalogo-productos">
+                <!-- Se cargan dinamicamente desde funciones.js -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h4>Huellas & Cia</h4>
+            <p>Cordoba, Argentina</p>
+            <p>Tel: +54 351 000-0000</p>
+            <p>contacto@huellas.com.ar</p>
+        </div>
+        <div>
+            <h4>Redes sociales</h4>
+            <a href="https://instagram.com/huellascia" aria-label="Link a Instagram">
+                <img src="./recursos/iconos/ig.svg" width="35" alt="Icono Instagram">
+            </a>
+            <a href="https://facebook.com/huellascia" aria-label="Link a Facebook">
+                <img src="./recursos/iconos/fb.svg" width="35" alt="Icono Facebook">
+            </a>
+            <a href="https://wa.me/543510000000" aria-label="Link a WhatsApp">
+                <img src="./recursos/iconos/wa.svg" width="35" alt="Icono WhatsApp">
+            </a>
+        </div>
+        <div>
+            <p>2025 Huellas & Cia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

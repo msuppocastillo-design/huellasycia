@@ -1,0 +1,74 @@
+/* ========================================
+   CONFIRMACION_TURNO.HTML - TURNO CONFIRMADO
+   ======================================== */
+
+@import url('base.css');
+
+/* Seccion principal */
+section[aria-label="Confirmacion de turno"] {
+    background-color: white;
+    border-radius: 15px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+section[aria-label="Confirmacion de turno"] img {
+    margin-bottom: 20px;
+}
+
+section[aria-label="Confirmacion de turno"] h1 {
+    color: #6FCF97;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+section[aria-label="Confirmacion de turno"] > p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Detalles del turno */
+article[aria-label="Detalles del turno"] {
+    background-color: #FFF8F0;
+    border: 2px solid #F2994A;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px auto;
+    text-align: left;
+    max-width: 400px;
+}
+
+article[aria-label="Detalles del turno"] h2 {
+    color: #F2994A;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+article[aria-label="Detalles del turno"] p {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+article[aria-label="Detalles del turno"] strong {
+    color: #986F3F;
+}
+
+/* Links */
+section[aria-label="Confirmacion de turno"] a {
+    display: inline-block;
+    background-color: #2D9CDB;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 10px;
+    font-weight: 600;
+}
+
+section[aria-label="Confirmacion de turno"] a:hover {
+    background-color: #F2994A;
+    text-decoration: none;
+}
