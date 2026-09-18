@@ -1,180 +1,22 @@
 
 // ========================================
-// 1. DATOS DE PRODUCTOS 
+// 1. DATOS DE PRODUCTOS (ahora vienen de la API)
 // ========================================
 
 const petshop = {
-    productos: [
-        {
-            id: 1,
-            nombre: 'Alimento Perro Adulto',
-            imagen: './recursos/imagenes/ALIMENTO PERRO.jpg',
-            precio: 15000,
-            categoria: 'alimentos',
-            marca: 'Royal Canin',
-            descripcion: 'Alimento balanceado premium para perros adultos de todas las razas. Rico en proteinas y vitaminas.',
-            peso: '15 kg',
-            sabor: 'Pollo y arroz',
-            para: 'perros adultos'
-        },
-        {
-            id: 2,
-            nombre: 'Rascador para Gatos',
-            imagen: './recursos/imagenes/ACCESORIO GATO.png',
-            precio: 7500,
-            categoria: 'accesorios',
-            marca: 'CatLove',
-            descripcion: 'Rascador para gatos con base estable y poste de sisal.',
-            peso: '2 kg',
-            sabor: '-',
-            para: 'gatos'
-        },
-        {
-            id: 3,
-            nombre: 'Shampoo de Gatos',
-            imagen: './recursos/imagenes/HIGIENE GATO.jpg',
-            precio: 4200,
-            categoria: 'higiene',
-            marca: 'PetCare',
-            descripcion: 'Shampoo suave especialmente formulado para gatos. pH balanceado.',
-            peso: '500 ml',
-            sabor: '-',
-            para: 'gatos'
-        },
-        {
-            id: 4,
-            nombre: 'Collar Ajustable',
-            imagen: './recursos/imagenes/Collar ajustable Perros.jpg',
-            precio: 2800,
-            categoria: 'accesorios',
-            marca: 'DogPro',
-            descripcion: 'Collar ajustable de nylon resistente con hebilla metalica.',
-            peso: '100 g',
-            sabor: '-',
-            para: 'perros'
-        },
-        {
-            id: 5,
-            nombre: 'Alimento Gato',
-            imagen: './recursos/imagenes/ALIMENTO GATO.png',
-            precio: 13900,
-            categoria: 'alimentos',
-            marca: 'Whiskas',
-            descripcion: 'Alimento completo para gatos adultos con alto contenido proteico.',
-            peso: '10 kg',
-            sabor: 'Pescado',
-            para: 'gatos adultos'
-        },
-        {
-            id: 6,
-            nombre: 'Juguete tipo correa para Perros',
-            imagen: './recursos/imagenes/JUGUETE PERRO.jpg',
-            precio: 6200,
-            categoria: 'juguetes',
-            marca: 'FunDog',
-            descripcion: 'Juguete interactivo con correa para juegos de tirar.',
-            peso: '300 g',
-            sabor: '-',
-            para: 'perros'
-        },
-        {
-            id: 7,
-            nombre: 'Juguete Raton',
-            imagen: './recursos/imagenes/JUGUETE GATO.jpg',
-            precio: 3500,
-            categoria: 'juguetes',
-            marca: 'CatFun',
-            descripcion: 'Juguete en forma de raton con catnip incluido.',
-            peso: '50 g',
-            sabor: '-',
-            para: 'gatos'
-        },
-        {
-            id: 8,
-            nombre: 'Shampoo Suave',
-            imagen: './recursos/imagenes/HIGIENE GATO.jpg',
-            precio: 4200,
-            categoria: 'higiene',
-            marca: 'PetCare',
-            descripcion: 'Shampoo suave para mascotas con piel sensible.',
-            peso: '500 ml',
-            sabor: '-',
-            para: 'perros y gatos'
-        },
-        {
-            id: 9,
-            nombre: 'Suplemento Vitaminico',
-            imagen: './recursos/imagenes/SALUD GATO.jpg',
-            precio: 8900,
-            categoria: 'salud',
-            marca: 'VetPlus',
-            descripcion: 'Suplemento vitaminico completo para fortalecer el sistema inmunologico.',
-            peso: '100 comprimidos',
-            sabor: '-',
-            para: 'perros y gatos'
-        },
-        {
-            id: 10,
-            nombre: 'Alimento Premium Perro',
-            imagen: './recursos/imagenes/ALIMENTO PERRO.jpg',
-            precio: 15000,
-            categoria: 'alimentos',
-            marca: 'Pro Plan',
-            descripcion: 'Alimento super premium para perros adultos. Formula avanzada.',
-            peso: '15 kg',
-            sabor: 'Cordero y arroz',
-            para: 'perros adultos'
-        },
-        {
-            id: 11,
-            nombre: 'Bandana para Perros',
-            imagen: './recursos/imagenes/ACCESORIO PERRO.png.jpg',
-            precio: 3200,
-            categoria: 'accesorios',
-            marca: 'DogStyle',
-            descripcion: 'Bandana ajustable para perros de todos los tamanos. Varios colores.',
-            peso: '50 g',
-            sabor: '-',
-            para: 'perros'
-        },
-        {
-            id: 12,
-            nombre: 'Shampoo para Perros',
-            imagen: './recursos/imagenes/HIGIENE PERRO.jpg',
-            precio: 4500,
-            categoria: 'higiene',
-            marca: 'PetCare',
-            descripcion: 'Shampoo especial para perros con olor agradable duradero.',
-            peso: '500 ml',
-            sabor: '-',
-            para: 'perros'
-        },
-        {
-            id: 13,
-            nombre: 'Suplemento Perro',
-            imagen: './recursos/imagenes/SALUD PERRO.jpg',
-            precio: 9500,
-            categoria: 'salud',
-            marca: 'VetPlus',
-            descripcion: 'Suplemento vitaminico para perros adultos. Fortalece huesos y articulaciones.',
-            peso: '120 comprimidos',
-            sabor: '-',
-            para: 'perros'
-        },
-        {
-            id: 14,
-            nombre: 'Kit Adopcion Gato',
-            imagen: './recursos/imagenes/adoptar gato.jpg',
-            precio: 12000,
-            categoria: 'accesorios',
-            marca: 'Huellas',
-            descripcion: 'Kit completo para recibir a tu nuevo gato: arenero, comedero y juguete.',
-            peso: '3 kg',
-            sabor: '-',
-            para: 'gatos'
-        }
-    ]
+    productos: []
 };
+
+async function cargarProductosDesdeAPI() {
+    try {
+        const respuesta = await fetch('/api/productos');
+        if (!respuesta.ok) throw new Error('Error al obtener productos');
+        petshop.productos = await respuesta.json();
+    } catch (error) {
+        console.error('No se pudieron cargar los productos desde la API:', error);
+        petshop.productos = [];
+    }
+}
 
 // ========================================
 // 2. CARRITO DE COMPRAS
@@ -196,10 +38,10 @@ function actualizarContadorCarrito() {
 
 function agregarAlCarrito(idProducto, cantidad) {
     if (!cantidad) cantidad = 1;
-    var producto = petshop.productos.find(function(p) { return p.id === idProducto; });
+    var producto = petshop.productos.find(function(p) { return p.id == idProducto; });
     if (!producto) return;
 
-    var itemExistente = carrito.find(function(item) { return item.id === idProducto; });
+    var itemExistente = carrito.find(function(item) { return item.id == idProducto; });
     if (itemExistente) {
         itemExistente.cantidad += cantidad;
     } else {
@@ -217,7 +59,7 @@ function agregarAlCarrito(idProducto, cantidad) {
 }
 
 function eliminarDelCarrito(idProducto) {
-    carrito = carrito.filter(function(item) { return item.id !== idProducto; });
+    carrito = carrito.filter(function(item) { return item.id != idProducto; });
     guardarCarrito();
     actualizarContadorCarrito();
 }
@@ -228,7 +70,6 @@ function calcularTotalCarrito() {
     }, 0);
 }
 
-// Renderizar página de carrito (tabla) y manejar interacciones
 function renderizarCarrito() {
     var tabla = document.getElementById('tabla-carrito');
     if (!tabla) return;
@@ -268,18 +109,16 @@ function renderizarCarrito() {
         tbody.appendChild(tr);
     });
 
-    // Actualizar subtotal
     var subtotal = calcularTotalCarrito();
     var subtotalElem = document.getElementById('subtotal');
     if (subtotalElem) subtotalElem.textContent = '$ ' + subtotal.toLocaleString();
 
-    // Listeners para inputs de cantidad
     var inputsCantidad = document.querySelectorAll('.input-cantidad');
     inputsCantidad.forEach(function(inp) {
         inp.addEventListener('change', function() {
-            var id = parseInt(this.getAttribute('data-id'));
+            var id = this.getAttribute('data-id');
             var val = parseInt(this.value) || 1;
-            var item = carrito.find(function(i) { return i.id === id; });
+            var item = carrito.find(function(i) { return i.id == id; });
             if (item) {
                 item.cantidad = val;
                 guardarCarrito();
@@ -289,18 +128,16 @@ function renderizarCarrito() {
         });
     });
 
-    // Listeners para botones eliminar
     var botonesEliminar = document.querySelectorAll('.btn-eliminar');
     botonesEliminar.forEach(function(btn) {
         btn.addEventListener('click', function() {
-            var id = parseInt(this.getAttribute('data-id'));
+            var id = this.getAttribute('data-id');
             eliminarDelCarrito(id);
             renderizarCarrito();
             actualizarContadorCarrito();
         });
     });
 
-    // Vaciar carrito
     var btnVaciar = document.getElementById('vaciar-carrito');
     if (btnVaciar) {
         btnVaciar.addEventListener('click', function() {
@@ -341,7 +178,6 @@ function renderizarProductos(listaProductos) {
 function obtenerProductosFiltrados() {
     var resultado = petshop.productos.slice();
 
-    // Filtro por categoria
     var categoriasSeleccionadas = [];
     var checkboxesCategoria = document.querySelectorAll('aside[aria-label="Filtros de productos"] input[name="categoria"]:checked');
     checkboxesCategoria.forEach(function(cb) {
@@ -353,7 +189,6 @@ function obtenerProductosFiltrados() {
         });
     }
 
-    // Filtro por marca
     var marcasSeleccionadas = [];
     var checkboxesMarca = document.querySelectorAll('aside[aria-label="Filtros de productos"] input[name="marca"]:checked');
     checkboxesMarca.forEach(function(cb) {
@@ -366,7 +201,6 @@ function obtenerProductosFiltrados() {
         });
     }
 
-    // Filtro por precio
     var precioMin = document.getElementById('precio_min');
     var precioMax = document.getElementById('precio_max');
     if (precioMin && precioMin.value) {
@@ -376,7 +210,6 @@ function obtenerProductosFiltrados() {
         resultado = resultado.filter(function(p) { return p.precio <= parseInt(precioMax.value); });
     }
 
-    // Busqueda
     var inputBuscar = document.getElementById('buscar');
     if (inputBuscar && inputBuscar.value) {
         var termino = inputBuscar.value.toLowerCase();
@@ -399,20 +232,25 @@ function aplicarFiltros() {
 // 4. DETALLE DE PRODUCTO
 // ========================================
 
-function cargarDetalleProducto() {
+async function cargarDetalleProducto() {
     var params = new URLSearchParams(window.location.search);
-    var id = parseInt(params.get('id'));
+    var id = params.get('id');
 
     if (!id) return;
 
-    var producto = petshop.productos.find(function(p) { return p.id === id; });
+    var producto = null;
+    try {
+        var respuesta = await fetch('/api/productos/' + id);
+        if (respuesta.ok) producto = await respuesta.json();
+    } catch (error) {
+        console.error('Error al cargar el detalle del producto:', error);
+    }
+
     if (!producto) return;
 
-    // Actualizar migas de pan
     var migasLi = document.querySelector('nav[aria-label="Migas de pan"] li:last-child');
     if (migasLi) migasLi.textContent = producto.nombre;
 
-    // Actualizar detalle
     var article = document.querySelector('article[aria-label="Detalle del producto"]');
     if (article) {
         article.innerHTML = '<img src="' + producto.imagen + '" alt="' + producto.nombre + '" width="300">' +
@@ -430,9 +268,8 @@ function cargarDetalleProducto() {
             '<button type="button" onclick="var c = parseInt(document.getElementById(\"cantidad\").value || 1); agregarAlCarrito(' + producto.id + ', c)">Agregar al carrito</button>';
     }
 
-    // Actualizar productos relacionados
     var relacionados = petshop.productos.filter(function(p) {
-        return p.categoria === producto.categoria && p.id !== producto.id;
+        return p.categoria === producto.categoria && p.id != producto.id;
     }).slice(0, 2);
 
     var contenedorRelacionados = document.querySelector('section[aria-label="Productos relacionados"] ul');
@@ -506,7 +343,6 @@ function mostrarConfirmacionTurno() {
         console.warn('Error leyendo ultimo_turno', err);
     }
     if (!ultimo) {
-        // Si no hay "ultimo_turno", intentar tomar el ultimo elemento del array
         try {
             var turnos = JSON.parse(localStorage.getItem('turnos_huellas')) || [];
             if (turnos.length > 0) ultimo = turnos[turnos.length - 1];
@@ -520,7 +356,6 @@ function mostrarConfirmacionTurno() {
         return;
     }
 
-    // Mapear valores legibles para el servicio
     var nombresServicio = { 'bano': 'Bano completo', 'corte': 'Corte de pelo', 'banocorte': 'Bano + Corte', 'unas': 'Corte de unas' };
 
     contenedor.innerHTML = '<h2>Detalles</h2>' +
@@ -671,7 +506,6 @@ function mostrarPanelUsuario() {
         var h2 = panel.querySelector('h2');
         if (h2) h2.textContent = 'Bienvenido, ' + usuarioActual.nombre;
         panel.style.display = 'block';
-        // Mostrar historial de turnos para el usuario
         mostrarHistorialTurnos();
     }
     if (login) login.style.display = 'none';
@@ -723,16 +557,21 @@ function renderizarDestacados() {
 // 9. INICIALIZACION
 // ========================================
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Actualizar contador del carrito en todas las paginas
+document.addEventListener('DOMContentLoaded', async function() {
     actualizarContadorCarrito();
 
-    // TIENDA: inicializar productos y filtros
     var catalogo = document.getElementById('catalogo-productos');
+    var destacadosContenedor = document.getElementById('productos-destacados');
+    var articleDetalle = document.querySelector('article[aria-label="Detalle del producto"]');
+
+    // Solo pedimos la lista completa a la API si la vamos a necesitar
+    if (catalogo || destacadosContenedor) {
+        await cargarProductosDesdeAPI();
+    }
+
     if (catalogo) {
         renderizarProductos(petshop.productos);
 
-        // Event listeners para filtros
         var checkboxes = document.querySelectorAll('aside[aria-label="Filtros de productos"] input[type="checkbox"]');
         checkboxes.forEach(function(cb) {
             cb.addEventListener('change', aplicarFiltros);
@@ -754,13 +593,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // PRODUCTO: cargar detalle
-    var articleDetalle = document.querySelector('article[aria-label="Detalle del producto"]');
     if (articleDetalle && window.location.search.indexOf('id=') !== -1) {
+        // Para calcular "relacionados" necesitamos el listado completo también
+        await cargarProductosDesdeAPI();
         cargarDetalleProducto();
     }
 
-    // TURNOS: actualizar resumen en tiempo real
     var resumenCita = document.querySelector('aside[aria-label="Resumen de tu cita"]');
     if (resumenCita) {
         var radiosServicio = document.querySelectorAll('input[name="servicio"]');
@@ -773,7 +611,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (fecha) fecha.addEventListener('change', actualizarResumenTurno);
         if (hora) hora.addEventListener('change', actualizarResumenTurno);
 
-        // Guardar turno al enviar
         var formTurnos = document.getElementById('form-turnos');
         if (formTurnos) {
             formTurnos.addEventListener('submit', function(e) {
@@ -803,7 +640,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     } catch (err) {
                         console.warn('No se pudo guardar ultimo_turno en localStorage', err);
                     }
-                    // Redirigir a la pagina de confirmacion
                     window.location.href = './confirmacion_turno.html';
                 } else {
                     alert('Por favor completa todos los campos obligatorios para reservar el turno.');
@@ -812,13 +648,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // CONTACTO: manejar envio
     var formContacto = document.getElementById('form-contacto');
     if (formContacto) {
         formContacto.addEventListener('submit', enviarContacto);
     }
 
-    // MI CUENTA: manejar login y registro
     if (document.getElementById('login')) {
         var formLogin = document.getElementById('form-login');
         var formRegistro = document.getElementById('form-registro');
@@ -826,7 +660,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (formLogin) formLogin.addEventListener('submit', iniciarSesion);
         if (formRegistro) formRegistro.addEventListener('submit', registrarUsuario);
 
-        // Verificar si hay sesion activa
         var usuarioActual = JSON.parse(localStorage.getItem('usuario_actual'));
         if (usuarioActual) {
             mostrarPanelUsuario();
@@ -835,19 +668,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // INDEX: renderizar destacados
-    var destacadosContenedor = document.getElementById('productos-destacados');
     if (destacadosContenedor) {
         renderizarDestacados();
     }
 
-    // CONFIRMACION: mostrar detalles del ultimo turno si estamos en esa pagina
     var confirmSection = document.querySelector('section[aria-label="Confirmacion de turno"]');
     if (confirmSection) {
         mostrarConfirmacionTurno();
     }
 
-    // Hacer clic en el icono del carrito abra la página del carrito
     var carritoHeader = document.querySelector('div[aria-label="Carrito de compras"]');
     if (carritoHeader) {
         carritoHeader.style.cursor = 'pointer';
@@ -856,9 +685,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Si estamos en la página carrito, renderizar su contenido
     if (document.getElementById('tabla-carrito')) {
-        // cargar carrito desde localStorage (en caso de cambios en otra pestaña)
         carrito = JSON.parse(localStorage.getItem('carrito_huellas')) || [];
         renderizarCarrito();
     }
