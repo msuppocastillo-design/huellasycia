@@ -1,18 +1,42 @@
-
 // ========================================
-// 1. DATOS DE PRODUCTOS (ahora vienen de la API)
+// 1. DATOS DE PRODUCTOS (API con respaldo local)
 // ========================================
 
-const productosrespaldo = [ /* ...los 14 productos actuales, sin cambios... */ ];
+// Productos de respaldo basados en db/huellas.sql.
+// Se usan si la API no está disponible; la base de datos sigue siendo la fuente principal.
+const productosrespaldo = [
+    { id: 1, nombre: 'Alimento Perro Adulto', imagen: './recursos/imagenes/ALIMENTO PERRO.jpg', precio: 15000, categoria: 'alimentos', marca: 'Royal Canin', descripcion: 'Alimento balanceado premium para perros adultos de todas las razas. Rico en proteinas y vitaminas.', peso: '15 kg', sabor: 'Pollo y arroz', para: 'perros adultos' },
+    { id: 2, nombre: 'Rascador para Gatos', imagen: './recursos/imagenes/ACCESORIO GATO.png', precio: 7500, categoria: 'accesorios', marca: 'CatLove', descripcion: 'Rascador para gatos con base estable y poste de sisal.', peso: '2 kg', sabor: '-', para: 'gatos' },
+    { id: 3, nombre: 'Shampoo de Gatos', imagen: './recursos/imagenes/HIGIENE GATO.jpg', precio: 4200, categoria: 'higiene', marca: 'PetCare', descripcion: 'Shampoo suave especialmente formulado para gatos. pH balanceado.', peso: '500 ml', sabor: '-', para: 'gatos' },
+    { id: 4, nombre: 'Collar Ajustable', imagen: './recursos/imagenes/Collar ajustable Perros.jpg', precio: 2800, categoria: 'accesorios', marca: 'DogPro', descripcion: 'Collar ajustable de nylon resistente con hebilla metalica.', peso: '100 g', sabor: '-', para: 'perros' },
+    { id: 5, nombre: 'Alimento Gato', imagen: './recursos/imagenes/ALIMENTO GATO.png', precio: 13900, categoria: 'alimentos', marca: 'Whiskas', descripcion: 'Alimento completo para gatos adultos con alto contenido proteico.', peso: '10 kg', sabor: 'Pescado', para: 'gatos adultos' },
+    { id: 6, nombre: 'Juguete tipo correa para Perros', imagen: './recursos/imagenes/JUGUETE PERRO.jpg', precio: 6200, categoria: 'juguetes', marca: 'FunDog', descripcion: 'Juguete interactivo con correa para juegos de tirar.', peso: '300 g', sabor: '-', para: 'perros' },
+    { id: 7, nombre: 'Juguete Raton', imagen: './recursos/imagenes/JUGUETE GATO.jpg', precio: 3500, categoria: 'juguetes', marca: 'CatFun', descripcion: 'Juguete en forma de raton con catnip incluido.', peso: '50 g', sabor: '-', para: 'gatos' },
+    { id: 8, nombre: 'Shampoo Suave', imagen: './recursos/imagenes/HIGIENE GATO.jpg', precio: 4200, categoria: 'higiene', marca: 'PetCare', descripcion: 'Shampoo suave para mascotas con piel sensible.', peso: '500 ml', sabor: '-', para: 'perros y gatos' },
+    { id: 9, nombre: 'Suplemento Vitaminico', imagen: './recursos/imagenes/SALUD GATO.jpg', precio: 8900, categoria: 'salud', marca: 'VetPlus', descripcion: 'Suplemento vitaminico completo para fortalecer el sistema inmunologico.', peso: '100 comprimidos', sabor: '-', para: 'perros y gatos' },
+    { id: 10, nombre: 'Alimento Premium Perro', imagen: './recursos/imagenes/ALIMENTO PERRO.jpg', precio: 15000, categoria: 'alimentos', marca: 'Pro Plan', descripcion: 'Alimento super premium para perros adultos. Formula avanzada.', peso: '15 kg', sabor: 'Cordero y arroz', para: 'perros adultos' },
+    { id: 11, nombre: 'Bandana para Perros', imagen: './recursos/imagenes/ACCESORIO PERRO.png.jpg', precio: 3200, categoria: 'accesorios', marca: 'DogStyle', descripcion: 'Bandana ajustable para perros de todos los tamanos. Varios colores.', peso: '50 g', sabor: '-', para: 'perros' },
+    { id: 12, nombre: 'Shampoo para Perros', imagen: './recursos/imagenes/HIGIENE PERRO.jpg', precio: 4500, categoria: 'higiene', marca: 'PetCare', descripcion: 'Shampoo especial para perros con olor agradable duradero.', peso: '500 ml', sabor: '-', para: 'perros' },
+    { id: 13, nombre: 'Suplemento Perro', imagen: './recursos/imagenes/SALUD PERRO.jpg', precio: 9500, categoria: 'salud', marca: 'VetPlus', descripcion: 'Suplemento vitaminico para perros adultos. Fortalece huesos y articulaciones.', peso: '120 comprimidos', sabor: '-', para: 'perros' },
+    { id: 14, nombre: 'Kit Adopcion Gato', imagen: './recursos/imagenes/adoptar gato.jpg', precio: 12000, categoria: 'accesorios', marca: 'Huellas', descripcion: 'Kit completo para recibir a tu nuevo gato: arenero, comedero y juguete.', peso: '3 kg', sabor: '-', para: 'gatos' }
+];
+
 const petshop = { productos: productosrespaldo };
 
 async function cargarproductos() {
     try {
-        const resp = await fetch('/api/v1/productos');
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        petshop.productos = await resp.json();
-    } catch (err) {
-        console.warn('No se pudo leer la API, se usan datos locales', err);
+        const respuesta = await fetch('/api/v1/productos');
+        if (!respuesta.ok) throw new Error('HTTP ' + respuesta.status);
+
+        const productos = await respuesta.json();
+        if (!Array.isArray(productos)) {
+            throw new Error('La API devolvio un formato de productos invalido');
+        }
+
+        petshop.productos = productos;
+    } catch (error) {
+        console.warn('No se pudo leer la API; se usan los productos de respaldo.', error);
+        // No reemplazar el respaldo por una lista vacía si falla la API.
     }
 }
 
