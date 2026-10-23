@@ -238,13 +238,24 @@ async function cargarDetalleProducto() {
 
     var producto = null;
     try {
-        var respuesta = await fetch('/api/productos/' + id);
+      var respuesta = await fetch('/api/v1/productos/' + id);
         if (respuesta.ok) producto = await respuesta.json();
     } catch (error) {
         console.error('Error al cargar el detalle del producto:', error);
     }
 
-    if (!producto) return;
+    if (!producto) {
+    var article = document.querySelector(
+        'article[aria-label="Detalle del producto"]'
+    );
+
+    if (article) {
+        article.innerHTML =
+            '<p>No se pudo cargar el producto. Intenta nuevamente.</p>';
+    }
+
+    return;
+}
 
     var migasLi = document.querySelector('nav[aria-label="Migas de pan"] li:last-child');
     if (migasLi) migasLi.textContent = producto.nombre;
@@ -564,7 +575,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Solo pedimos la lista completa a la API si la vamos a necesitar
     if (catalogo || destacadosContenedor) {
-        await cargarProductosDesdeAPI();
+        await cargarproductos();
     }
 
     if (catalogo) {
@@ -593,7 +604,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     if (articleDetalle && window.location.search.indexOf('id=') !== -1) {
         // Para calcular "relacionados" necesitamos el listado completo también
-        await cargarProductosDesdeAPI();
+        await cargarproductos();
         cargarDetalleProducto();
     }
 

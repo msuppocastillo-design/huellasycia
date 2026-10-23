@@ -25,7 +25,7 @@ INSERT INTO productos (nombre, imagen, precio, categoria, marca, descripcion, pe
 ('Shampoo Suave', './recursos/imagenes/HIGIENE GATO.jpg', 4200, 'higiene', 'PetCare', 'Shampoo suave para mascotas con piel sensible.', '500 ml', '-', 'perros y gatos'),
 ('Suplemento Vitaminico', './recursos/imagenes/SALUD GATO.jpg', 8900, 'salud', 'VetPlus', 'Suplemento vitaminico completo para fortalecer el sistema inmunologico.', '100 comprimidos', '-', 'perros y gatos'),
 ('Alimento Premium Perro', './recursos/imagenes/ALIMENTO PERRO.jpg', 15000, 'alimentos', 'Pro Plan', 'Alimento super premium para perros adultos. Formula avanzada.', '15 kg', 'Cordero y arroz', 'perros adultos'),
-('Bandana para Perros', './recursos/imagenes/ACCESORIO PERRO.png.jpg', 3200, 'accesorios', 'DogStyle', 'Bandana ajustable para perros de todos los tamanos. Varios colores.', '50 g', '-', 'perros'),
+('Bandana para Perros', './recursos/imagenes/ACCESORIO PERRO.png.jpg', 3200, 'accesorios', 'DogStyle', 'Bandana ajustable para perros de todos los tamaños. Varios colores.', '50 g', '-', 'perros'),
 ('Shampoo para Perros', './recursos/imagenes/HIGIENE PERRO.jpg', 4500, 'higiene', 'PetCare', 'Shampoo especial para perros con olor agradable duradero.', '500 ml', '-', 'perros'),
 ('Suplemento Perro', './recursos/imagenes/SALUD PERRO.jpg', 9500, 'salud', 'VetPlus', 'Suplemento vitaminico para perros adultos. Fortalece huesos y articulaciones.', '120 comprimidos', '-', 'perros'),
 ('Kit Adopcion Gato', './recursos/imagenes/adoptar gato.jpg', 12000, 'accesorios', 'Huellas', 'Kit completo para recibir a tu nuevo gato: arenero, comedero y juguete.', '3 kg', '-', 'gatos');

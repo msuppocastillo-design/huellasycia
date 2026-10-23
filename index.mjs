@@ -4,7 +4,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import rutasmoduloproductos from './modulos/productos/productos.rutas.mjs'
-import openapi from './docs/openapi.mjs'
+
 
 dotenv.config()
 
@@ -18,16 +18,7 @@ app.use(express.json())
 // ---- API ----
 app.use(rutasmoduloproductos)
 
-// ---- Documentacion (Scalar) ----
-app.get('/api/openapi.json', (req, res) => res.json(openapi))
-app.get('/api/docs', (req, res) => {
-  res.type('html').send(`<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><title>API Huellas & Cia</title></head>
-<body>
-  <script id="api-reference" data-url="/api/openapi.json"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
-</body></html>`)
-})
+
 
 // ---- Sitio estatico ----
 // No usamos express.static(raiz) para NO exponer .env, package.json, etc.
@@ -54,5 +45,5 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(puerto, () => {
-  console.log(`Servidor en http://localhost:${puerto}  |  Docs: http://localhost:${puerto}/api/docs  |  Admin: http://localhost:${puerto}/admin/`)
+  console.log(`Servidor en http://localhost:${puerto}|  Admin: http://localhost:${puerto}/admin/`)
 })
