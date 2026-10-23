@@ -260,12 +260,21 @@ async function cargarDetalleProducto() {
 
     if (!id) return;
 
-    var producto = null;
+    // El listado ya se cargó antes de llamar a esta función; sirve como respaldo.
+    var producto = petshop.productos.find(function(p) {
+        return String(p.id) === String(id);
+    }) || null;
+
     try {
-      var respuesta = await fetch('/api/v1/productos/' + id);
-        if (respuesta.ok) producto = await respuesta.json();
+        var respuesta = await fetch('/api/v1/productos/' + encodeURIComponent(id));
+        if (respuesta.ok) {
+            var productoAPI = await respuesta.json();
+            if (productoAPI && typeof productoAPI === 'object' && !Array.isArray(productoAPI)) {
+                producto = productoAPI;
+            }
+        }
     } catch (error) {
-        console.error('Error al cargar el detalle del producto:', error);
+        console.warn('No se pudo cargar el detalle desde la API; se intenta usar el listado disponible.', error);
     }
 
     if (!producto) {
