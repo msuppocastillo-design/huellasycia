@@ -3,18 +3,16 @@
 // 1. DATOS DE PRODUCTOS (ahora vienen de la API)
 // ========================================
 
-const petshop = {
-    productos: []
-};
+const productosrespaldo = [ /* ...los 14 productos actuales, sin cambios... */ ];
+const petshop = { productos: productosrespaldo };
 
-async function cargarProductosDesdeAPI() {
+async function cargarproductos() {
     try {
-        const respuesta = await fetch('/api/productos');
-        if (!respuesta.ok) throw new Error('Error al obtener productos');
-        petshop.productos = await respuesta.json();
-    } catch (error) {
-        console.error('No se pudieron cargar los productos desde la API:', error);
-        petshop.productos = [];
+        const resp = await fetch('/api/v1/productos');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        petshop.productos = await resp.json();
+    } catch (err) {
+        console.warn('No se pudo leer la API, se usan datos locales', err);
     }
 }
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion - Huellas & Cia</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/admin/admin.css">
+    <script src="/admin/admin.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="/" aria-label="Ir al inicio"><img src="/recursos/imagenes/logo.png" alt="Logo Huellas y Cia"></a>
+        <nav aria-label="Navegacion admin">
+            <ul>
+                <li><a href="/">Ver sitio</a></li>
+                <li><a href="/api/docs" target="_blank" rel="noopener">Documentacion API</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Administracion de productos</h1>
+        <p id="mensaje" role="status" aria-live="polite"></p>
+
+        <section aria-label="Formulario de producto">
+            <h2 id="titulo-form">Nuevo producto</h2>
+            <form id="form-producto">
+                <input type="hidden" id="id">
+                <div class="grilla">
+                    <div><label for="nombre">Nombre *</label><input type="text" id="nombre" required></div>
+                    <div><label for="precio">Precio *</label><input type="number" id="precio" min="0" step="0.01" required></div>
+                    <div>
+                        <label for="categoria">Categoria *</label>
+                        <select id="categoria" required>
+                            <option value="">Seleccionar</option>
+                            <option value="alimentos">Alimentos</option>
+                            <option value="accesorios">Accesorios</option>
+                            <option value="higiene">Higiene</option>
+                            <option value="salud">Salud</option>
+                            <option value="juguetes">Juguetes</option>
+                        </select>
+                    </div>
+                    <div><label for="marca">Marca</label><input type="text" id="marca"></div>
+                    <div><label for="imagen">Imagen (ruta)</label><input type="text" id="imagen" placeholder="./recursos/imagenes/archivo.jpg"></div>
+                    <div><label for="peso">Peso / contenido</label><input type="text" id="peso" placeholder="15 kg"></div>
+                    <div><label for="sabor">Sabor</label><input type="text" id="sabor"></div>
+                    <div><label for="para">Para</label><input type="text" id="para" placeholder="perros adultos"></div>
+                </div>
+                <label for="descripcion">Descripcion</label>
+                <textarea id="descripcion" rows="3"></textarea>
+                <div class="acciones">
+                    <button type="submit" id="btn-guardar">Guardar</button>
+                    <button type="button" id="btn-cancelar" class="secundario" hidden>Cancelar edicion</button>
+                </div>
+            </form>
+        </section>
+
+        <section aria-label="Listado de productos">
+            <h2>Productos cargados</h2>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th></th><th>Nombre</th><th>Categoria</th><th>Marca</th><th>Precio</th><th>Acciones</th></tr>
+                </thead>
+                <tbody id="tabla-productos"></tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
