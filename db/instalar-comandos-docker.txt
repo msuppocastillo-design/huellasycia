@@ -1,0 +1,6 @@
+# Desde la carpeta db/
+docker build -f dockerfile -t imagen_huellas .
+docker run --name contenedor_huellas -e POSTGRES_USER=root -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=huellas -p 5432:5432 -d imagen_huellas
+
+# Verificar
+docker exec -it contenedor_huellas psql -U root -d huellas -c "SELECT id, nombre, precio FROM productos;"

@@ -1,8 +1,8 @@
 {
   "name": "huellasycia",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.1.0",
+  "description": "Huellas & Cia - sitio + API de productos",
+  "main": "index.mjs",
   "scripts": {
     "dev": "node --watch index.mjs",
     "start": "node index.mjs"
@@ -11,15 +11,14 @@
   "author": "",
   "license": "ISC",
   "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "12.4.2",
-      "onFail": "download"
-    }
+    "packageManager": { "name": "pnpm", "version": "12.4.2", "onFail": "download" }
   },
   "packageManager": "pnpm@12.4.2",
   "type": "module",
   "dependencies": {
-    "express": "5.2.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "5.2.1",
+    "pg": "^8.23.1"
   }
 }
